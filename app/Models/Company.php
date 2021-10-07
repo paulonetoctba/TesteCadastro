@@ -11,8 +11,11 @@ class Company extends Model
     public $timestamps = false;
 
     protected $fillable = [
+        'id',
         'uf',
         'razao_social',
-		'cnpj'
+		'cnpj',
+        'created_at',
+        'updated_at'
     ];
 }
