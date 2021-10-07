@@ -13,9 +13,13 @@ class CreateClientTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
+        Schema::disableForeignKeyConstraints();
+
         Schema::create('client', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_empresa');
+            $table->unsignedBigInteger('id_empresa')->unsigned();
+            $table->foreign('id_empresa')->references('id')->on('company');
             $table->string('nome', 255);
             $table->string('cpf_cnpj', 18);
             $table->string('rg', 10);
@@ -26,7 +30,6 @@ class CreateClientTable extends Migration
             $table->string('endereco', 255);
             $table->string('numero', 5);
             $table->timestamps();
-            $table->foreign('id_empresa')->references('id')->on('company');
         });
     }
 
