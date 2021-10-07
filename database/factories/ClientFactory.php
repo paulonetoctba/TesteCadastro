@@ -25,14 +25,14 @@ class ClientFactory extends Factory
         return [
             'id_empresa' => $this->id_empresa,
             'nome' => $this->nome,
-            'cpf_cnpj' => cpf_cnpj,
-            'rg' => rg,
-            'data_nascimento' => data_nascimento,
-            'telefone' => telefone,
-            'email' => email,
-            'cep' => cep,
-            'endereco' => endereco,
-            'numero' => numero
+            'cpf_cnpj' => $this->cpf_cnpj,
+            'rg' => $this->rg,
+            'data_nascimento' => $this->data_nascimento,
+            'telefone' => $this->telefone,
+            'email' => $this->email,
+            'cep' => $this->cep,
+            'endereco' => $this->endereco,
+            'numero' => $this->numero
         ];
     }
 }

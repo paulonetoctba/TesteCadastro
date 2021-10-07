@@ -22,4 +22,9 @@ class Client extends Model
 		'endereco',
 		'numero'
     ];
+
+	public function id_empresa()
+    {
+        $this->belongsTo(Company::class, 'id_empresa', 'id');
+    }
 }
